@@ -1,0 +1,26 @@
+.box{
+    background-color: rgb(65, 66, 67);
+    border: none;
+    border-radius: 10%;
+    box-shadow: 0px 0px 8px #888;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 4rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.x{
+    color: rgb(255,70,37);
+}
+
+.o{
+    color: rgb(44,167,255);
+}
+
+.box:hover{
+    box-shadow: 0px 0px 15px #888 ;
+}
