@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Board from "./Components/Board/Board";
 import ScoreBoard from "./Components/ScoreBoard/ScoreBoard";
-import { ResetButton } from "./Components/ResetButton/ResetButton";
 
 export default function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -63,16 +62,28 @@ export default function App() {
     setBoard(Array(9).fill(null));
   };
 
+  const restartGame = () => {
+    setGameOver(false);
+    setBoard(Array(9).fill(null));
+    setScores({ xScore: 0, oScore: 0 });
+  };
+
   return (
     <div>
       <div className="header">
-        <h2>Tic Tac Toe</h2>
+        <span>Tic Tac Toe</span>
       </div>
       <hr />
-
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <ResetButton resetBoard={resetBoard} />
+      <div className="btn">
+        <button className="functional-btn" onClick={resetBoard}>
+          Reset
+        </button>
+        <button className="functional-btn" onClick={restartGame}>
+          Restart
+        </button>
+      </div>
     </div>
   );
 }
